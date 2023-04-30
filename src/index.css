@@ -36,6 +36,9 @@
   .button-emrald {
     @apply bg-gradient-to-b from-emerald-500 to-green-500 shadow-lg shadow-emerald-400 rounded-full text-lg sm:text-sm px-9 py-1.5 transition-all duration-200 active:scale-90 text-white sm:w-48;
   }
+  .button-indigo {
+    @apply bg-gradient-to-b from-indigo-800 to-indigo-800 shadow-lg shadow-indigo-700 rounded-full text-lg sm:text-sm px-9 py-1.5 transition-all duration-200 active:scale-90 text-white sm:w-48;
+  }
   .button-light {
     @apply bg-gradient-to-b from-white to-slate-100 shadow-lg shadow-slate-100 rounded-full text-lg sm:text-sm px-9 py-1.5 transition-all duration-200 active:scale-90 text-black sm:w-48;
   }
@@ -63,4 +66,30 @@
   .nav-sticky {
     @apply bg-white/80 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 flex items-center h-[9vh] fixed top-0 left-0 right-0 opacity-100 z-[100] shadow-sm shadow-slate-100;
   }
+}
+
+/* Hero section */
+.homeImages {
+  width: 70%;
+  margin: 1rem auto 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 5rem;
+}
+
+.videoDiv {
+  width: 100%;
+}
+
+.videoDiv video {
+  border-radius: 10rem;
+}
+
+.bus {
+  position: absolute;
+  width: 80%;
+  height: 90%;
+  top: 25%;
+  left: 40%;
 }

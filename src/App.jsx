@@ -19,7 +19,7 @@ import {
   pricingapi,
   bannerAPI,
   footerAPI,
-} from "./data/travigodata";
+} from "./data/swiftTravelData";
 
 const App = () => {
   return (
