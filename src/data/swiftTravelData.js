@@ -1,5 +1,6 @@
 import dashboard from "../images/bus.png";
-import memoryimg from "../images/memory.png";
+// import memoryimg from "../images/memory.png";
+import memoryimg from "../images/about.png";
 import video from "../road_video.mp4";
 
 import brand1 from "../images/brand1.png";
@@ -58,28 +59,28 @@ export const hero = {
 };
 
 export const memory = {
-  title: "Sweet Memories",
-  subtitle: "Come To Life Again",
-  text: "What we have always taken care for 10 years is always prioritizing the comfort of our users. So, do not our quality.",
+  title: "We're more than just a ride-",
+  subtitle: "we're your travel partner",
+  text: "We have made it our mission for the past 10 years to prioritize the comfort of our users above all else. Our commitment to quality service is reflected in the level of comfort we provide to our passengers.",
   img: memoryimg,
   experience: [
-    { number: "10", title: "Year Experience" },
-    { number: "400", title: "Year Collaboration" },
-    { number: "30k+", title: "Happy Customer" },
+    { number: "100+", title: "Cities" },
+    { number: "50+", title: "Experienced Drivers" },
+    { number: "3000+", title: "Happy Customer" },
   ],
 };
 
 export const placesAPI = [
-  { placeImg: place1, location: "Lahore", distance: "3.0 hour dirve" },
-  { placeImg: place2, location: "Faisalabad", distance: "2.5 hour dirve" },
-  { placeImg: place3, location: "Multan", distance: "4.7 hour drive" },
-  { placeImg: place4, location: "Rawalpindi", distance: "4 hour drive" },
-  { placeImg: place5, location: "Islamabad", distance: "4.9 hour drive" },
-  { placeImg: place6, location: "Muree", distance: "4.5 hour drive" },
-  { placeImg: place7, location: "Nathia Gali", distance: "5.5 hour drive" },
-  { placeImg: place8, location: "Ayubia Gali", distance: "5.1 hour drive" },
-  { placeImg: place9, location: "Bhurban", distance: "5.1 hour drive" },
-  { placeImg: place10, location: "Gilgit", distance: "5.1 hour drive" },
+  { placeImg: place1, location: "Pune", distance: "3.0 hour dirve" },
+  { placeImg: place2, location: "Nashik", distance: "2.5 hour dirve" },
+  { placeImg: place3, location: "Solapur", distance: "4.7 hour drive" },
+  { placeImg: place4, location: "Amravati", distance: "4 hour drive" },
+  { placeImg: place5, location: "Gujrat", distance: "4.9 hour drive" },
+  { placeImg: place6, location: "Ahmednagar", distance: "4.5 hour drive" },
+  { placeImg: place7, location: "Goa", distance: "5.5 hour drive" },
+  { placeImg: place8, location: "Manglore", distance: "5.1 hour drive" },
+  { placeImg: place9, location: "Jalgoan", distance: "5.1 hour drive" },
+  { placeImg: place10, location: "Panvel", distance: "5.1 hour drive" },
 ];
 
 export const pricingapi = {

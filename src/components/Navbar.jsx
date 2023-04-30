@@ -36,7 +36,7 @@ const Navbar = ({ navlinks }) => {
         <nav className="flex items-center justify-between travigo-container">
           <NavLink to={`/`} className="flex items-center">
             {/* <img src={logo} alt='logo/img' className='w-22 h-9 object-fill' /> */}
-            <h1>Swift Travel</h1>
+            <h1 className="text-lg text-slate-900 font-bold">Swift Travel</h1>
           </NavLink>
           <ul className="flex items-center lg:hidden gap-7">
             {navlinks?.map((val, i) => (
@@ -49,7 +49,10 @@ const Navbar = ({ navlinks }) => {
           </ul>
           <ul className="flex items-center lg:hidden">
             <li>
-              <button type="button" className="button-indigo px-7 text-base">
+              <button
+                type="button"
+                className="btn btn-primary rounded-full px-7 text-base"
+              >
                 Register
               </button>
             </li>
