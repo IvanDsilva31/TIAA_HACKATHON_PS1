@@ -9,3 +9,4 @@ export { default as Contact } from "./MainPage/Contact.jsx";
 export { default as Footer } from "./MainPage/Footer.jsx";
 export { default as Signup } from "./Registration-Login/signup.jsx"
 export { default as Login } from "./Registration-Login/login.jsx"
+export { default as BusDetailsForm} from "./BusOperator/addbus.jsx"

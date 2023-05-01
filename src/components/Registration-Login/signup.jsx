@@ -13,7 +13,9 @@ function Signup() {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
-    axios.post("http://example.com/api/signup", data)
+    data.selectedRole = selectedRole;
+    console.log(data);
+    axios.post("http://localhost:4040/signup", data)
       .then(response => {
         console.log(response.data);
       })

@@ -8,7 +8,7 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post("http://example.com/api/login", { email, password })
+    axios.post("http://localhost:4040/login", { email, password })
       .then(response => {
         console.log(response.data);
       })
