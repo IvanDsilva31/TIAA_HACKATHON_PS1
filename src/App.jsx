@@ -5,9 +5,7 @@ import {
   Footer,
   Memory,
   Explore,
-  Advertise,
   Pricings,
-  Banner,
   Contact,
 } from "./components";
 import {

@@ -1,7 +1,7 @@
 import dashboard from "../images/bus.png";
 // import memoryimg from "../images/memory.png";
 import memoryimg from "../images/about.png";
-import video from "../road_video.mp4";
+import video from "../videos/road_video.mp4";
 
 import brand1 from "../images/brand1.png";
 import brand2 from "../images/brand2.png";

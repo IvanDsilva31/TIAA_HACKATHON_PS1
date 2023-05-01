@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../images/logo.png";
 import menu from "../images/menu.svg";
-import PopupMenu from "./PopupMenu";
+import PopupMenu from "./MainPage/PopupMenu";
+
 const Navbar = ({ navlinks }) => {
   const [popupState, setPopupState] = useState(false);
   const [navState, setNavState] = useState(false);
@@ -30,8 +31,8 @@ const Navbar = ({ navlinks }) => {
     <>
       <header
         className={`
-        nav-default ${navState && "nav-sticky"}
-      `}
+          nav-default ${navState && "nav-sticky"}
+        `}
       >
         <nav className="flex items-center justify-between travigo-container">
           <NavLink to={`/`} className="flex items-center">
@@ -41,7 +42,10 @@ const Navbar = ({ navlinks }) => {
           <ul className="flex items-center lg:hidden gap-7">
             {navlinks?.map((val, i) => (
               <li key={i}>
-                <NavLink to={"#"} className="text-lg text-slate-900">
+                <NavLink
+                  to={"#"}
+                  className="text-lg text-slate-900 transition duration-300 hover:bg-primary hover:text-white rounded-md px-4 py-2"
+                >
                   {val.link}
                 </NavLink>
               </li>
@@ -54,6 +58,14 @@ const Navbar = ({ navlinks }) => {
                 className="btn btn-primary rounded-full px-7 text-base"
               >
                 Register
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="btn btn-outline rounded-full px-7 text-base"
+              >
+                Login
               </button>
             </li>
           </ul>
