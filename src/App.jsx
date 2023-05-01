@@ -7,6 +7,7 @@ import {
   Explore,
   Pricings,
   Contact,
+  SearchBar,
 } from "./components";
 import {
   hero,
