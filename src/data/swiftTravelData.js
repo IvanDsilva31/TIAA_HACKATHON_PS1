@@ -53,7 +53,7 @@ export const hero = {
   subtitle: "Come travel with us.",
   text: "Enjoy hassle free inter-city bus services on the click of a button",
   btn1: "Register",
-  btn2: "Sign Up",
+  btn2: "Login",
   img: dashboard,
   video: video,
 };

@@ -9,10 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
+    "@mui/icons-material": "^5.11.16",
+    "axios": "^1.4.0",
     "daisyui": "^2.51.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.11.0",
+    "react-tailwindcss-datepicker": "^1.6.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

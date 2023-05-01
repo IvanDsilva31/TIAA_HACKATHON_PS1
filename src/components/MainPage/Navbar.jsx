@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 import menu from "../../images/menu.svg";
 import PopupMenu from "../MainPage/PopupMenu";
@@ -36,7 +36,6 @@ const Navbar = ({ navlinks }) => {
       >
         <nav className="flex items-center justify-between travigo-container">
           <NavLink to={`/`} className="flex items-center">
-            {/* <img src={logo} alt='logo/img' className='w-22 h-9 object-fill' /> */}
             <h1 className="text-lg text-slate-900 font-bold">Swift Travel</h1>
           </NavLink>
           <ul className="flex items-center lg:hidden gap-7">
@@ -52,21 +51,15 @@ const Navbar = ({ navlinks }) => {
             ))}
           </ul>
           <ul className="flex items-center lg:hidden">
-            <li>
-              <button
-                type="button"
-                className="btn btn-primary rounded-full px-7 text-base"
-              >
+            <li className="p-2">
+              <Link to="/login" className="btn btn-primary rounded-full px-7 text-base">
                 Register
-              </button>
+              </Link>
             </li>
-            <li>
-              <button
-                type="button"
-                className="btn btn-outline rounded-full px-7 text-base"
-              >
+            <li className="p-2">
+            <Link to="/login" className="btn btn-outline rounded-full px-7 text-base">
                 Login
-              </button>
+            </Link>
             </li>
           </ul>
           <ul className="hidden lg:flex items-center">
