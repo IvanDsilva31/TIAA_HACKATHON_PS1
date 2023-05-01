@@ -7,17 +7,9 @@ export { default as Pricings } from "./MainPage/Pricings.jsx";
 export { default as Banner } from "./MainPage/Banner.jsx";
 export { default as Contact } from "./MainPage/Contact.jsx";
 export { default as Footer } from "./MainPage/Footer.jsx";
-<<<<<<< HEAD
 export { default as Signup } from "./Registration-Login/signup.jsx";
 export { default as Login } from "./Registration-Login/login.jsx";
 export { default as BusDetailsForm} from "./BusOperator/addbus.jsx";
 export { default as ViewBus} from "./BusOperator/viewbus.jsx";
 export { default as SeatSelector } from "./Passenger/seatSelector.jsx"
-=======
-export { default as Signup } from "./Registration-Login/signup.jsx"
-export { default as Login } from "./Registration-Login/login.jsx"
-export { default as BusDetailsForm} from "./BusOperator/addbus.jsx"
-export { default as ViewBus} from "./BusOperator/viewbus.jsx"
-
-export { default as SearchBar } from "./SearchBar"
->>>>>>> 3b2a3c123fc7e8fa4b621eefa6bb879ddea714f0
+export { default as SearchBar } from "./MainPage/SearchBar.jsx";
