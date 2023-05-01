@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { XIcon } from '@heroicons/react/outline';
+import { XIcon, PlusIcon } from '@heroicons/react/outline';
 import axios from "axios";
 
 function BusDetailsForm() {
@@ -151,6 +151,7 @@ function BusDetailsForm() {
                         <label className="label">
                             <span className="label-text">Features</span>
                         </label>
+                        <div className="flex items-center justify-between">
                         <input
                             name="newFeature"
                             type="text"
@@ -158,13 +159,16 @@ function BusDetailsForm() {
                             value={newFeature}
                             onChange={handleFeatureInputChange}
                         />
-                        <button type="button" className="btn btn-outline mt-4" onClick={handleAddFeature}>Add feature</button>
+                        <button type="button" className="btn btn-primary btn-outline w-12 m-1" onClick={handleAddFeature}>
+                            <PlusIcon className="w-4 h-4"/> 
+                        </button>
+                        </div>
                         <ul>
                             {featuresList.map((feature, index) => (
                                 <li key={feature} className="flex items-center justify-between">
                                     <span>{feature}</span>
-                                    <button type="button" className="btn btn-error ml-2" onClick={() => handleRemoveFeature(index)}>
-                                        <XIcon className="w-2 h-2" />
+                                    <button type="button" className="btn btn-secondary btn-outline w-12 m-1" onClick={() => handleRemoveFeature(index)}>
+                                        <XIcon className="w-5 h-5" />
                                     </button>
                                 </li>
                             ))}
