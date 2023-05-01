@@ -7,3 +7,5 @@ export { default as Pricings } from "./MainPage/Pricings.jsx";
 export { default as Banner } from "./MainPage/Banner.jsx";
 export { default as Contact } from "./MainPage/Contact.jsx";
 export { default as Footer } from "./MainPage/Footer.jsx";
+export { default as Signup } from "./Registration-Login/signup.jsx"
+export { default as Login } from "./Registration-Login/login.jsx"
