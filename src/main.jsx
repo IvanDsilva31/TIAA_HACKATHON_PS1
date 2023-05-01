@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App'
-import { Signup, Login, BusDetailsForm, ViewBus, SeatSelector } from './components'
+import { Signup, Login, BusDetailsForm, ViewBus, SeatSelector, PaymentPage } from './components'
 import './index.css'
 
 const seats = [
@@ -33,6 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           reservedSeats={reservedSeats}
           onSelect={handleSeatSelect}
         />} />
+        <Route exact path="/paymentpage" element={<PaymentPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

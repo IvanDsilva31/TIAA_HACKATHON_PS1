@@ -11,5 +11,6 @@ export { default as Signup } from "./Registration-Login/signup.jsx";
 export { default as Login } from "./Registration-Login/login.jsx";
 export { default as BusDetailsForm} from "./BusOperator/addbus.jsx";
 export { default as ViewBus} from "./BusOperator/viewbus.jsx";
-export { default as SeatSelector } from "./Passenger/seatSelector.jsx"
+export { default as SeatSelector } from "./Passenger/seatSelector.jsx";
+export { default as PaymentPage } from "./Payment/paymentpage.jsx";
 export { default as SearchBar } from "./MainPage/SearchBar.jsx";
