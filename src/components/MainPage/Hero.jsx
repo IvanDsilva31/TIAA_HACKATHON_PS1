@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from "react";
 
 const Hero = ({ hero: { title, subtitle, btn1, btn2, text, img, video } }) => {
@@ -14,18 +15,18 @@ const Hero = ({ hero: { title, subtitle, btn1, btn2, text, img, video } }) => {
             </h1>
             <p className="text-base my-5 text-center sm:text-sm text-white">{text}</p>
             <div className="flex items-center justify-center gap-11 sm:gap-3 sm:flex-col sm:w-full">
-              <button type="button" className="btn btn-primary rounded-full px-8">
+              <Link to="/signup" className="btn btn-primary rounded-full px-8">
                 {btn1}
-              </button>
-              <button type="button" className="btn btn-neutral-focus rounded-full px-8">
+              </Link>
+              <Link to="/login" className="btn btn-neutral-focus rounded-full px-8">
                 {btn2}
-              </button>
+              </Link>
             </div>
           </div>
           <div className="homeImages flex items-center justify-center mb-11">
             <div className="videoDiv">
               <video loop autoPlay muted className="video">
-                <source src={video} type="video/mp4"/>
+                <source src={video} type="video/mp4" />
               </video>
             </div>
             <img
