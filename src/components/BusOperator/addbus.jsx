@@ -175,8 +175,6 @@ function BusDetailsForm() {
                         </ul>
                     </div>
 
-
-
                     {/* Submit Button */}
                     <button className="btn btn-primary mt-4" type="submit">
                         Add Bus

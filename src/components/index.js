@@ -10,3 +10,4 @@ export { default as Footer } from "./MainPage/Footer.jsx";
 export { default as Signup } from "./Registration-Login/signup.jsx"
 export { default as Login } from "./Registration-Login/login.jsx"
 export { default as BusDetailsForm} from "./BusOperator/addbus.jsx"
+export { default as ViewBus} from "./BusOperator/viewbus.jsx"
