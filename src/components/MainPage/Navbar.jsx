@@ -52,7 +52,7 @@ const Navbar = ({ navlinks }) => {
           </ul>
           <ul className="flex items-center lg:hidden">
             <li className="p-2">
-              <Link to="/login" className="btn btn-primary rounded-full px-7 text-base">
+              <Link to="/signup" className="btn btn-primary rounded-full px-7 text-base">
                 Register
               </Link>
             </li>

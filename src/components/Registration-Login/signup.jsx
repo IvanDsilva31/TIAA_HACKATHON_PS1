@@ -168,15 +168,6 @@ function Signup() {
           </div>
         )}
       </div>
-
-      {/* Image */}
-      <div className="md:w-1/4 xl:w-1/3 block md:hidden">
-        <img
-          src={img}
-          alt="signup-image"
-          className="w-20 h-20 object-fill"
-        />
-      </div>
     </div>
   );
 }
