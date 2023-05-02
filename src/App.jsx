@@ -27,6 +27,7 @@ const App = () => {
     <>
       <Navbar navlinks={navlinks} />
       <Hero hero={hero} />
+      <SearchBar/>
       <Memory memory={memory} />
       <Explore title="Explore The Most Visited Places" placesAPI={placesAPI} />
       {/* <Advertise brands={brands} /> */}
