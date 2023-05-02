@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../MainPage/Navbar';
 import axios from 'axios';
+import { passengerLinks } from '../../data/swiftTravelData';
 
 function BusDetailsCard({ vehicleClass, ac, fare, capacity, features }) {
   return (
@@ -69,8 +70,9 @@ function PaymentPage() {
 
   return (
     <div className=" flex justify-center md:justify-end -mr-15">
+      <Navbar navlinks={passengerLinks}/>
       <div className="flex justify-center py-5 px-20 my-60 mr-5">
-      <BusDetailsCard {...busDetails} />
+        <BusDetailsCard {...busDetails} />
       </div>
       <div className="max-w-md py-6 px-8 bg-white shadow-lg rounded-lg my-40 mr-20 ">
         <h2 className="text-2xl font-bold mb-8 flex justify-center">Make Payment</h2>
@@ -111,7 +113,6 @@ function PaymentPage() {
           <button type="submit"
             className="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-indigo-600 shadow-lg rounded-lg hover:bg-gray-900">Submit Payment</button>
         </form>
-
         <div className="flex flex-col items-center justify-center mb-4 mt-6">
           {isPaymentSuccessful ? (
             <p className="text-green-500 text-3xl font-bold">
@@ -124,7 +125,6 @@ function PaymentPage() {
           )}
         </div>
         <div>
-          <Navbar />
         </div>
       </div>
     </div>

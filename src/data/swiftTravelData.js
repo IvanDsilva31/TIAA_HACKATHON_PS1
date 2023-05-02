@@ -48,6 +48,18 @@ export const navlinks = [
   { link: "Contact", id: "contact" },
 ];
 
+export const passengerLinks = [
+  { link: "Home", id: "home" },
+  { link: "View Busses", id: "viewBus" },
+  { link: "My Tickets", id: "mytickets" },
+]
+
+export const operatorLinks = [
+  { link: "Home", id: "home" },
+  { link: "My Busses", id: "myBus" },
+  { link: "My Routes", id: "myroutes" },
+]
+
 export const hero = {
   title: "The journey is just as important as the destination",
   subtitle: "Come travel with us.",

@@ -75,7 +75,6 @@ function SeatSelector(props) {
                 </div>
             </div>
         </div>
-
     );
 }
 
