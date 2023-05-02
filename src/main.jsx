@@ -13,7 +13,7 @@ const seats = [
   ["1E", "2E", "3E", "4E", "5E", "6E"]
 ];
 
-const reservedSeats = ["2C", "3D", "4E"];
+const reservedSeats = ["2C", "3D", "4E", "6A", "6B"];
 
 const handleSeatSelect = (selectedSeats) => {
   console.log("Selected seats:", selectedSeats);
