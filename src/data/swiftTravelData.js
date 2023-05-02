@@ -161,3 +161,22 @@ export const footerAPI = {
     { icon: youtube },
   ],
 };
+
+export const singleBusDetails = {
+  id: "1",
+  operator: "Anand Travels",
+  source: "Thane",
+  destination: "Agnel Ashram",
+  departureTime: 1215,
+  departureDate: "11 May",
+  arrivalTime: 1215,
+  arrivalDate: "12 May",
+  stops: ["Ghatkopar","Kurla","Dadar","Bandra"],
+  vehicleClass: "sleeper",
+  ac: false,
+  fare: 4000,
+  capacity: 35,
+  availablity:12,
+  rating:3.4,
+  features: []
+}

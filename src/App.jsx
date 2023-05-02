@@ -8,6 +8,7 @@ import {
   Pricings,
   Contact,
   SearchBar,
+  BusDetailsCard,
 } from "./components";
 import {
   hero,
@@ -18,6 +19,7 @@ import {
   pricingapi,
   bannerAPI,
   footerAPI,
+  singleBusDetails,
 } from "./data/swiftTravelData";
 
 const App = () => {

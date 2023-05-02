@@ -13,3 +13,4 @@ export { default as BusDetailsForm} from "./BusOperator/addbus.jsx"
 export { default as ViewBus} from "./BusOperator/viewbus.jsx"
 
 export { default as SearchBar } from "./SearchBar"
+export { default as BusDetailsCard } from "./BusDetailsCard"
