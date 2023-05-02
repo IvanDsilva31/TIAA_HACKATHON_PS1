@@ -34,6 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           onSelect={handleSeatSelect}
         />} />
         <Route exact path="/paymentpage" element={<PaymentPage />} />
+        {/* <Route exact path="/searchBuses" element={<SearchBusesPage/>} /> */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

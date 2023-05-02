@@ -13,6 +13,6 @@ export { default as BusDetailsForm} from "./BusOperator/addbus.jsx";
 export { default as ViewBus} from "./BusOperator/viewbus.jsx";
 export { default as SeatSelector } from "./Passenger/seatSelector.jsx";
 export { default as PaymentPage } from "./Payment/paymentpage.jsx";
-export { default as SearchBar } from "./MainPage/SearchBar.jsx";
-
-export { default as SearchBar } from "./SearchBar"
+export { default as BusDetailsCard } from "./Passenger/BusDetailsCard.jsx";
+export { default as SearchBar } from "./Passenger/SearchBar.jsx";
+export { default as SearchFilters } from "./Passenger/SearchFilters.jsx";

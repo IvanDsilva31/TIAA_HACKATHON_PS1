@@ -9,6 +9,7 @@ import {
   Contact,
   SearchBar,
   BusDetailsCard,
+  SearchFilters,
 } from "./components";
 import {
   hero,
@@ -27,7 +28,11 @@ const App = () => {
     <>
       <Navbar navlinks={navlinks} />
       <Hero hero={hero} />
-      <SearchBar/>
+      <SearchBar />
+      <div className="flex">
+        <SearchFilters />
+        <BusDetailsCard singleBusDetails={singleBusDetails} />
+      </div>
       <Memory memory={memory} />
       <Explore title="Explore The Most Visited Places" placesAPI={placesAPI} />
       {/* <Advertise brands={brands} /> */}
