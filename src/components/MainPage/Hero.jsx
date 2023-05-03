@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = ({ hero: { title, subtitle, btn1, btn2, text, img, video } }) => {
   return (
-    <>
+    <div id="home">
       <div className="flex flex-col bg-gradient-to-b from-indigo-400 to-white h-auto w-auto">
         <div className="travigo-container grid items-start justify-items-center">
           <div className="grid items-center justify-items-center mt-36 mb-16 md:mt-28 md:mb-12">
@@ -13,12 +13,20 @@ const Hero = ({ hero: { title, subtitle, btn1, btn2, text, img, video } }) => {
             <h1 className="text-5xl font-bold lg:text-5xl md:text-4xl sm:text-3xl xsm:text-2xl text-white filter drop-shadow-lg">
               {subtitle}
             </h1>
-            <p className="text-base my-5 text-center sm:text-sm text-white">{text}</p>
+            <p className="text-base my-5 text-center sm:text-sm text-white">
+              {text}
+            </p>
             <div className="flex items-center justify-center gap-11 sm:gap-3 sm:flex-col sm:w-full">
-              <Link to="/signup" className="btn btn-primary rounded-full px-8">
+              <Link
+                to="/initial-signup"
+                className="btn btn-primary rounded-full px-8"
+              >
                 {btn1}
               </Link>
-              <Link to="/login" className="btn btn-neutral-focus rounded-full px-8">
+              <Link
+                to="/login"
+                className="btn btn-neutral-focus rounded-full px-8"
+              >
                 {btn2}
               </Link>
             </div>
@@ -37,7 +45,7 @@ const Hero = ({ hero: { title, subtitle, btn1, btn2, text, img, video } }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

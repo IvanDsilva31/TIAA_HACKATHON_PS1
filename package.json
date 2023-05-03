@@ -12,9 +12,12 @@
     "@heroicons/react": "^1.0.6",
     "@mui/icons-material": "^5.11.16",
     "axios": "^1.4.0",
+    "boxicons": "^2.1.4",
     "daisyui": "^2.51.6",
     "react": "^18.2.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.0",
     "react-tailwindcss-datepicker": "^1.6.0"
   },

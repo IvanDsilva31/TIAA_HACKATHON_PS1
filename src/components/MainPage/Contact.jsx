@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <>
+    <div id="contact">
       <div className="p-5 bg-white/80 ring-1 ring-blue-200 shadow-md shadow-blue-300 rounded-lg max-w-5xl w-full ml-auto mr-auto mt-0 xl:w-[95vw] relative top-12">
         <div className="flex items-center justify-between lg:flex-col lg:gap-7">
           <div className="grid items-center sm:text-center">
@@ -32,7 +32,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
