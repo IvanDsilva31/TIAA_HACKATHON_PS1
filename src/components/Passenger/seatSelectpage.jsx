@@ -1,14 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SeatSelector from "./seatSelector";
 
 function SeatSelectPage() {
-    //   const seats = [
-    //     ["1A", "2A", "3A", "4A", "5A", "6A"],
-    //     ["1B", "2B", "3B", "4B", "5B", "6B"],
-    //     ["1C", "2C", "3C", "4C", "5C", "6C"],
-    //     ["1D", "2D", "3D", "4D", "5D", "6D"],
-    //     ["1E", "2E", "3E", "4E", "5E", "6E"]
-    //   ];
     const rows = 8;
     const cols = 5;
 
@@ -21,7 +15,7 @@ function SeatSelectPage() {
             const seat = `${i}${String.fromCharCode(65 + j)}`;
             cols.push(seat);
         }
-        
+
         seats.push(cols);
     }
 
@@ -32,11 +26,18 @@ function SeatSelectPage() {
     };
 
     return (
-        <SeatSelector
-            seats={seats}
-            reservedSeats={reservedSeats}
-            onSelect={handleSeatSelect}
-        />
+        <>
+            <SeatSelector
+                seats={seats}
+                reservedSeats={reservedSeats}
+                onSelect={handleSeatSelect}
+            />
+            <div className="flex justify-center mt-4 pb-2">
+                <Link to="/paymentpage" className="btn btn-primary">
+                    Proceed to Payment
+                </Link>
+            </div>
+        </>
     );
 }
 
