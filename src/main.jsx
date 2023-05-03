@@ -33,6 +33,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           reservedSeats={reservedSeats}
           onSelect={handleSeatSelect}
         />} />
+        <Route exact path="/searchBar" element={<SearchBar />} />
+        <Route exact path="/searchfilter" element={<SearchFilters />} />
         <Route exact path="/paymentpage" element={<PaymentPage />} />
         {/* <Route exact path="/searchBuses" element={<SearchBusesPage/>} /> */}
       </Routes>
