@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App'
-import { Signup, Login, BusDetailsForm, ViewBus, SeatSelector, PaymentPage, UserDashboard } from './components'
+import { Signup, Login, BusDetailsForm, ViewBus, SeatSelector, PaymentPage, UserDashboard, SearchBar} from './components'
 import './index.css'
 
 const seats = [
@@ -34,8 +34,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           reservedSeats={reservedSeats}
           onSelect={handleSeatSelect}
         />} />
-        {/* <Route exact path="/searchBar" element={<SearchBar />} />
-        <Route exact path="/searchfilter" element={<SearchFilters />} /> */}
+        <Route exact path="/searchBar" element={<SearchBar />} />
+        {/* <Route exact path="/searchfilter" element={<SearchFilters />} /> */}
         <Route exact path="/paymentpage" element={<PaymentPage />} />
         {/* <Route exact path="/searchBuses" element={<SearchBusesPage/>} /> */}
       </Routes>
