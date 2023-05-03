@@ -8,7 +8,7 @@ import {
   Pricings,
   Contact,
   SearchBar,
-  BusDetailsCard,
+  // BusDetailsCard,
   SearchFilters,
 } from "./components";
 import {
