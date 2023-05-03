@@ -1,6 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Home from "./pages/home/Home";
+import List from "./pages/list/List";
+import Single from "./pages/single/Single";
+import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { productInputs, userInputs } from "./formSource";
 import App from './App'
 import { Signup, Login, BusDetailsForm, ViewBus, SeatSelector, PaymentPage, UserDashboard, SearchBar} from './components'
 import './index.css'
@@ -29,6 +34,27 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route exact path="/addbus" element={<BusDetailsForm />} />
         <Route exact path="/viewbus" element={<ViewBus />} />
         <Route exact path="/userboard" element={<UserDashboard />} />
+
+        <Route path="/busopdash">
+          <Route index element={<Home />} />
+          <Route path="users">
+            <Route index element={<List />} />
+            <Route path=":userId" element={<Single />} />
+            <Route
+              path="new"
+              element={<New inputs={userInputs} title="Add New User" />}
+            />
+          </Route>
+          <Route path="products">
+            <Route index element={<List />} />
+            <Route path=":productsId" element={<Single />} />
+            <Route
+                path="new"
+                element={<New inputs={productInputs} title="Add New Product" />}
+              />
+          </Route>
+        </Route>
+
         <Route exact path="/seatSelect" element={<SeatSelector
           seats={seats}
           reservedSeats={reservedSeats}
@@ -36,6 +62,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         />} />
         <Route exact path="/searchBar" element={<SearchBar />} />
         {/* <Route exact path="/searchfilter" element={<SearchFilters />} /> */}
+        
         <Route exact path="/paymentpage" element={<PaymentPage />} />
         {/* <Route exact path="/searchBuses" element={<SearchBusesPage/>} /> */}
       </Routes>

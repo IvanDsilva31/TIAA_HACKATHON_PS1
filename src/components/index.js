@@ -17,3 +17,5 @@ export { default as BusDetailsCard } from "./Passenger/BusDetailsCard.jsx";
 export { default as SearchBar } from "./Passenger/SearchBar.jsx";
 export { default as UserDashboard } from "./Userdashboard/user-dashboard.jsx";
 export { default as SearchFilters } from "./Passenger/SearchFilters.jsx";
+export { default as Sidebar } from "./sidebar/Sidebar.jsx";
+export { default as Navbarbusop } from "./navbar-busop/Navbar-busop.jsx";
