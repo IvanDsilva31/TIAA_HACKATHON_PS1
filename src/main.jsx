@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App'
-import { Signup, Login, BusDetailsForm, ViewBus, SeatSelector, PaymentPage } from './components'
+import { Signup, Login, BusDetailsForm, ViewBus, SeatSelector, PaymentPage, UserDashboard } from './components'
 import './index.css'
 
 const seats = [
@@ -28,13 +28,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/addbus" element={<BusDetailsForm />} />
         <Route exact path="/viewbus" element={<ViewBus />} />
+        <Route exact path="/userboard" element={<UserDashboard />} />
         <Route exact path="/seatSelect" element={<SeatSelector
           seats={seats}
           reservedSeats={reservedSeats}
           onSelect={handleSeatSelect}
         />} />
-        <Route exact path="/searchBar" element={<SearchBar />} />
-        <Route exact path="/searchfilter" element={<SearchFilters />} />
+        {/* <Route exact path="/searchBar" element={<SearchBar />} />
+        <Route exact path="/searchfilter" element={<SearchFilters />} /> */}
         <Route exact path="/paymentpage" element={<PaymentPage />} />
         {/* <Route exact path="/searchBuses" element={<SearchBusesPage/>} /> */}
       </Routes>
