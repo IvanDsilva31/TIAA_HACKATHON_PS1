@@ -75,6 +75,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 />
               }
             />
+            {/* <Route exact path="/seatSelect" element={<SeatSelectPage />} /> */}
           </Route>
           <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
             <Route exact path="/searchBar" element={<SearchBar />} />
@@ -84,44 +85,27 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route exact path="/paymentpage" element={<PaymentPage />} />
             {/* <Route exact path="/searchBuses" element={<SearchBusesPage/>} /> */}
           </Route>
+          <Route path="/busopdash">
+            <Route index element={<Home />} />
+            <Route path="users">
+              <Route index element={<List />} />
+              <Route path=":userId" element={<Single />} />
+              <Route
+                path="new"
+                element={<New inputs={userInputs} title="Add New User" />}
+              />
+            </Route>
+            <Route path="products">
+              <Route index element={<List />} />
+              <Route path=":productsId" element={<Single />} />
+              <Route
+                path="new"
+                element={<New inputs={productInputs} title="Add New Product" />}
+              />
+            </Route>
+          </Route>
         </Routes>
       </AuthProvider>
-      <Routes>
-        <Route exact path="/" element={<App />} />
-        <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/addbus" element={<BusDetailsForm />} />
-        <Route exact path="/viewbus" element={<ViewBus />} />
-        <Route exact path="/userboard" element={<UserDashboard />} />
-        {/* <Route exact path="/allTours" element={<AllTours />}></Route> */}
-
-        <Route path="/busopdash">
-          <Route index element={<Home />} />
-          <Route path="users">
-            <Route index element={<List />} />
-            <Route path=":userId" element={<Single />} />
-            <Route
-              path="new"
-              element={<New inputs={userInputs} title="Add New User" />}
-            />
-          </Route>
-          <Route path="products">
-            <Route index element={<List />} />
-            <Route path=":productsId" element={<Single />} />
-            <Route
-              path="new"
-              element={<New inputs={productInputs} title="Add New Product" />}
-            />
-          </Route>
-        </Route>
-
-        <Route exact path="/seatSelect" element={<SeatSelectPage />} />
-        <Route exact path="/searchBar" element={<SearchBar />} />
-        {/* <Route exact path="/searchfilter" element={<SearchFilters />} /> */}
-
-        <Route exact path="/paymentpage" element={<PaymentPage />} />
-        {/* <Route exact path="/searchBuses" element={<SearchBusesPage/>} /> */}
-      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
