@@ -10,9 +10,14 @@ const PassengerDashboard = ({ manyBusDetails }) => {
             <div className="w-full flex">
                 <SearchFilters />
                 <div>
+
                     {manyBusDetails?.map((val, i) => (
                         <BusDetailsCard singleBusDetails={val} />
                     ))}
+
+                    <div>
+                        <Map />
+                    </div>
                 </div>
             </div>
         </>
