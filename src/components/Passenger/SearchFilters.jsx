@@ -46,7 +46,7 @@ const SearchFilters = () => {
     }
     return (
         <>
-            <div className="m-5 p-3 object-center w-3/12 border border-gray-400 text-lg text-gray-500">
+            <div className="m-2 p-3 object-center w-4/12 border border-gray-400 text-lg text-gray-500">
                 <h1 className="text-2xl">Filters</h1>
                 <div className="divider"></div>
                 <h3 className="text-lg">Arrival and Departure time</h3>
