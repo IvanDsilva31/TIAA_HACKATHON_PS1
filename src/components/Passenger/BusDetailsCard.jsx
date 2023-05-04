@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const BusDetailsCard = ({ singleBusDetails }) => {
     return (
         <>
-            <div className="m-5 p-3 object-center w-8/12 h-40 flex border border-gray-400 text-lg text-gray-500">
+            <div className="m-2 p-3 object-center w-11/12 h-40 flex border border-gray-400 text-lg text-gray-500">
                 <div className="w-40">
                     <h1 className="text-2xl font-black font-bold">{singleBusDetails.operator}</h1>
                     <p>{singleBusDetails.ac?"A/C":"Non A/C"}</p>
