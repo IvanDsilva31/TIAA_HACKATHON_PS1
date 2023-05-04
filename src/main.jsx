@@ -14,7 +14,7 @@ import {
   SeatSelector,
   SeatSelectPage,
   PaymentPage,
-  UserDashboard,
+  PassengerDashboard,
   SearchBar,
   // AllTours,
 } from "./components";
@@ -24,6 +24,7 @@ import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { productInputs, userInputs } from "./formSource";
 import "./index.css";
+import { manyBusDetails } from "./data/swiftTravelData";
 
 const ROLES = {
   User: 2001,
@@ -60,9 +61,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route element={<RequireAuth allowedRoles={[ROLES.BusOperator]} />}>
             <Route exact path="/viewbus" element={<ViewBus />} />
           </Route>
-          <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
-            <Route exact path="/userboard" element={<UserDashboard />} />
+          <Route >
+            <Route exact path="/userboard" element={<PassengerDashboard manyBusDetails={manyBusDetails}  />} />
           </Route>
+          {/* <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
+            <Route exact path="/userboard" element={<PassengerDashboard manyBusDetails={manyBusDetails}  />} />
+          </Route> */}
           <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
             <Route
               exact

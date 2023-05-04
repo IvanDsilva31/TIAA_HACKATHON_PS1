@@ -20,7 +20,7 @@ import {
   pricingapi,
   bannerAPI,
   footerAPI,
-  singleBusDetails,
+  manyBusDetails,
 } from "./data/swiftTravelData";
 
 const App = () => {

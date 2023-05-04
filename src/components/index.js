@@ -17,7 +17,7 @@ export { default as SeatSelectPage } from "./Passenger/seatSelectpage.jsx";
 export { default as PaymentPage } from "./Payment/paymentpage.jsx";
 // export { default as BusDetailsCard } from "./Passenger/BusDetailsCard.jsx";
 export { default as SearchBar } from "./Passenger/SearchBar.jsx";
-export { default as UserDashboard } from "./Userdashboard/user-dashboard.jsx";
+export { default as PassengerDashboard } from "./Passenger/PassengerDashboard.jsx";
 export { default as SearchFilters } from "./Passenger/SearchFilters.jsx";
 export { default as UseAuth } from "../hooks/useAuth.jsx";
 export { default as Sidebar } from "./sidebar/Sidebar.jsx";
