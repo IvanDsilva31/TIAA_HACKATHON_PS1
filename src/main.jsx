@@ -63,7 +63,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {/* <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
             <Route exact path="/userboard" element={<PassengerDashboard manyBusDetails={manyBusDetails}  />} />
           </Route> */}
-          <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
+          <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}/>
             <Route
               exact
               path="/seatSelect"
@@ -74,7 +74,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   onSelect={handleSeatSelect}
                 />
               }
-            /> */}
+            /> 
           <Route exact path="/seatSelect" element={<SeatSelectPage />} />
           {/* </Route> */}
           <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>

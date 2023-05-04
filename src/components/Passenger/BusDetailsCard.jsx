@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 const BusDetailsCard = ({ singleBusDetails }) => {
     return (
@@ -42,7 +43,9 @@ const BusDetailsCard = ({ singleBusDetails }) => {
                 <div className="w-32">
                     <h1 className="text-2xl font-black font-bold">Seats available</h1>
                     <p>{singleBusDetails.availablity}</p>
-                    <button className="mt-4 btn btn-sm">View Seats</button>
+                    <Link to="/seatSelect" className="mt-4 btn btn-sm">
+                        View Seats
+                    </Link>
                 </div>
             </div>
         </>
