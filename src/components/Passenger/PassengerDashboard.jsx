@@ -2,6 +2,7 @@ import Navbar from "../MainPage/Navbar";
 import SearchBar from "./SearchBar";
 import SearchFilters from "./SearchFilters";
 import BusDetailsCard from "./BusDetailsCard";
+import Map from "../Map/Map";
 
 const PassengerDashboard = ({ manyBusDetails }) => {
     return (
@@ -13,11 +14,12 @@ const PassengerDashboard = ({ manyBusDetails }) => {
 
                     {manyBusDetails?.map((val, i) => (
                         <BusDetailsCard singleBusDetails={val} />
+                       
                     ))}
-
-                    <div>
+                     <div>
                         <Map />
                     </div>
+
                 </div>
             </div>
         </>

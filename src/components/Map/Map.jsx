@@ -35,11 +35,11 @@ function Map() {
       try {
         // const response = await axios.get("http://localhost:3000/api/v1/tours/locations/64522042bd6e2043389c9191");
         // const data = response.data;
-        const data = [[23.36584,42.6936],[23.41361,42.68014],[23.45644,42.6646]];
+        const data = [[19.115428,72.905549],[18.5204,73.8567],[22.5726,88.3639]];
     
         const locations = data.map((location) => {
-          const latitude = location[1];
-          const longitude = location[0];
+          const latitude = location[0];
+          const longitude = location[1];
     
           // only return values if both latitude and longitude are defined
           if (latitude && longitude) {
@@ -106,7 +106,7 @@ function Map() {
   const center = positionList.length > 0 ? positionList[0] : [19.076090,72.877426];
 
   return (
-    <MapContainer center={center} zoom={6} style={{ height: "100px" }}>
+    <MapContainer center={center} zoom={10} style={{ height: "100vh" }}>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {markers}
       {route.length > 1 && <Polyline positions={route} />}
