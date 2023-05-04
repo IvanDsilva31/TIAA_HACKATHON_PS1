@@ -4,12 +4,24 @@ import axios from "axios";
 
 function BusDetailsForm() {
     const [busDetails, setBusDetails] = useState({
-        id: "",
-        vehicleClass: "",
+        // id: "",
+        registrationNumber:"",
+        vehicleMake: "",
+        vehicleModel: "",
+        manufacturingYear:0,
+        seating: {
+            capacity: 0,
+            dim: {
+                row: {
+                    left: 0,
+                    right:0
+                }
+            }
+        },
         ac: false,
         fare: 0,
-        capacity: 0,
-        features: []
+        features: [],
+        colour:"",
     });
 
     const [featuresList, setFeaturesList] = useState([]);
@@ -48,12 +60,24 @@ function BusDetailsForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         setBusDetails({
-            id: "",
-            vehicleClass: "",
+            // id: "",
+            registrationNumber:"",
+            vehicleMake: "",
+            vehicleModel: "",
+            manufacturingYear:0,
+            seating: {
+                capacity: 0,
+                dim: {
+                    row: {
+                        left: 0,
+                        right:0
+                    }
+                }
+            },
             ac: false,
             fare: 0,
-            capacity: 0,
-            features: featuresList
+            features: featuresList,
+            colour:"",
         });
         setFeaturesList([]);
         setNewFeature("");
@@ -74,7 +98,7 @@ function BusDetailsForm() {
                 <h2 className="text-2xl font-bold mb-4">Add Bus Details</h2>
                 <form onSubmit={handleSubmit}>
                     {/* ID */}
-                    <div className="form-control">
+                    {/* <div className="form-control">
                         <label className="label">
                             <span className="label-text">ID</span>
                         </label>
@@ -86,10 +110,68 @@ function BusDetailsForm() {
                             className="input input-bordered w-full"
                             placeholder="Enter ID"
                         />
+                    </div> */}
+
+                    {/* Regis Number */}
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Registration number</span>
+                        </label>
+                        <input
+                            name="registrationNumber"
+                            type="text"
+                            value={busDetails.registrationNumber}
+                            onChange={handleInputChange}
+                            className="input input-bordered w-full"
+                            placeholder="Enter Registration number"
+                        />
                     </div>
 
-                    {/* Vehicle Class */}
+                    {/*Vehicle make*/}
                     <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Vehicle Make</span>
+                        </label>
+                        <input
+                            name="vehicleMake"
+                            type="text"
+                            value={busDetails.vehicleMake}
+                            onChange={handleInputChange}
+                            className="input input-bordered w-full"
+                            placeholder="Enter Vehicle Make"
+                        />
+                    </div>
+
+                    {/* vehicleModel */}
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Vehicle Model</span>
+                        </label>
+                        <input
+                            name="vehicleModel"
+                            type="text"
+                            value={busDetails.vehicleModel}
+                            onChange={handleInputChange}
+                            className="input input-bordered w-full"
+                            placeholder="Enter Vehicle Model"
+                        />
+                    </div>
+
+                    {/* manufacturingYear */}
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Manufacturing Year</span>
+                        </label>
+                        <input
+                            name="manufacturingYear"
+                            type="number"
+                            className="input input-bordered w-full"
+                        />
+                    </div>
+
+
+                    {/* Vehicle Class */}
+                    {/* <div className="form-control">
                         <label className="label">
                             <span className="label-text">Vehicle Class</span>
                         </label>
@@ -104,7 +186,7 @@ function BusDetailsForm() {
                             <option value="Semi-sleeper">Semi-sleeper</option>
                             <option value="Seater">Seater</option>
                         </select>
-                    </div>
+                    </div> */}
 
                     {/* AC */}
                     <div className="form-control">
@@ -143,6 +225,45 @@ function BusDetailsForm() {
                             name="capacity"
                             type="number"
                             className="input input-bordered w-full"
+                        />
+                    </div>
+                    
+                    {/* Seating Left */}
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Seating Left</span>
+                        </label>
+                        <input
+                            name="left"
+                            type="number"
+                            className="input input-bordered w-full"
+                        />
+                    </div>
+
+                    {/* Seating Right */}
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Seating Right</span>
+                        </label>
+                        <input
+                            name="right"
+                            type="number"
+                            className="input input-bordered w-full"
+                        />
+                    </div>
+
+                    {/* colour */}
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Colour</span>
+                        </label>
+                        <input
+                            name="colour"
+                            type="text"
+                            value={busDetails.colour}
+                            onChange={handleInputChange}
+                            className="input input-bordered w-full"
+                            placeholder="Enter colour"
                         />
                     </div>
 
