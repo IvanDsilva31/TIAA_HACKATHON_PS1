@@ -8,6 +8,7 @@ import {
   Login,
   RequireAuth,
   BusDetailsForm,
+  TourDetailsForm,
   ViewBus,
   SeatSelector,
   SeatSelectPage,
@@ -54,6 +55,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route element={<RequireAuth allowedRoles={[ROLES.BusOperator]} />}>
             <Route exact path="/addbus" element={<BusDetailsForm />} />
           </Route>
+          <Route exact path="/addtour" element={<TourDetailsForm />} />
           <Route element={<RequireAuth allowedRoles={[ROLES.BusOperator]} />}>
             <Route exact path="/viewbus" element={<ViewBus />} />
           </Route>

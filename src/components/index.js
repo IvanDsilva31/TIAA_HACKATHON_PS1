@@ -9,6 +9,7 @@ export { default as Signup } from "./Registration-Login/signup.jsx";
 export { default as RequireAuth } from "./Registration-Login/requireAuth.jsx";
 export { default as Login } from "./Registration-Login/login.jsx";
 export { default as BusDetailsForm } from "./BusOperator/addbus.jsx";
+export { default as TourDetailsForm } from "./BusOperator/addtour.jsx";
 export { default as ViewBus } from "./BusOperator/viewbus.jsx";
 export { default as SeatSelector } from "./Passenger/seatSelector.jsx";
 export { default as SeatSelectPage } from "./Passenger/seatSelectpage.jsx";
