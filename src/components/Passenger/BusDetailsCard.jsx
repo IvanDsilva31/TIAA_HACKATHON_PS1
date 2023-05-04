@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-//import Map from "../Map/Map";
+import Map from "../Map/Map";
 
 const BusDetailsCard = ({ singleBusDetails }) => {
     return (
@@ -48,8 +48,11 @@ const BusDetailsCard = ({ singleBusDetails }) => {
                         View Seats
                     </Link>
                 </div>
-               
             </div>
+            <div className="w-11/12">
+            <Map />
+            </div>
+            
         </>
     )
 }
