@@ -1,325 +1,242 @@
-// import React, { useState } from "react";
-// import { XIcon, PlusIcon } from '@heroicons/react/outline';
-// import axios from "axios";
+import React, { useState } from 'react';
+import { XIcon, PlusIcon } from '@heroicons/react/outline';
+import axios from 'axios';
 
-// function TourDetailsForm() {
-//     const [tourDetails, settourDetails] = useState({
-//         name:"",
-//         duration:0,
-//         capacity:0,
-//         ratingsAverage:0,
-//         price:0,
-//         terms:"",
-//         description:"",
-//         startLocation:{
-//             type: "Point",
-//             coordinates: [23.34458, 42.67843],
-//             address: "",
-//             description: "",
-//         },
-//         locations: [],
-//         BusDriver: [],
-//         VehicleId: "",
-//     });
+const TourDetailsForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    duration: 0,
+    capacity: 0,
+    ratingsAverage: 0,
+    price: 0,
+    terms: '',
+    description: '',
+    startLocation: {
+      type: 'Point',
+      coordinates: [0, 0],
+      address: '',
+      description: '',
+    },
+    locations: [],
+    BusDriver: '',
+    VehicleId: '',
+  });
 
-//     const [featuresList, setFeaturesList] = useState([]);
-//     const [newFeature, setNewFeature] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    axios.post('/api/tours', formData)
+      .then(response => {
+        console.log('Tour data sent:', formData);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
 
-//     const handleSubmit = (event) => {
-//         event.preventDefault();
-//         axios.post('/api/tours', tourDetails)
-//           .then(response => {
-//             console.log('Tour data sent:', tourDetails);
-//           })
-//           .catch(error => {
-//             console.error(error);
-//           });
-//       };
-    
-//     //   const handleInputChange = (event) => {
-//     //     const { name, value } = event.target;
-//     //     settourDetails( => ({
-//     //       ...prevFormData,
-//     //       [name]: value
-//     //     }));
-//     //   };
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value
+    }));
+  };
 
-//     const handleInputChange = (event) => {
-//         const target = event.target;
-//         const value = target.type === "checkbox" ? target.checked : target.value;
-//         const name = target.name;
+  return (
+    <div className="container mx-auto p-10">
+   <div className="max-w-md mx-auto bg-white rounded-md overflow-hidden shadow-md p-6">
+      <h2 className="text-2xl font-bold mb-4">Add Tour Details</h2>
+    <form onSubmit={handleSubmit}>
 
-//         setBusDetails({
-//             ...busDetails,
-//             [name]: value
-//         });
-//     };
+    <div className="form-control">
+     <label className="label">
+        <span className="label-text"></span>
+      </label>
+      <input
+        name="name"
+        type="text"
+        value={formData.name}
+        onChange={handleInputChange}
+        className="input input-bordered w-full"
+        placeholder="Enter ID"
+        />
+    </div>
 
-//     const handleFeatureInputChange = (event) => {
-//         setNewFeature(event.target.value);
-//     };
+    <div className="form-control">
+     <label className="label">
+        <span className="label-text">Tour Duration</span>
+      </label>
+      <input
+        name="duration"
+        type="number"
+        value={formData.duration}
+        onChange={handleInputChange}
+        className="input input-bordered w-full"
+        placeholder="Enter ID"
+        />
+    </div>
 
-//     const handleAddFeature = () => {
-//         if (newFeature) {
-//             setFeaturesList([...featuresList, newFeature]);
-//             setNewFeature("");
-//         }
-//     };
+    <div className="form-control">
+     <label className="label">
+        <span className="label-text">Tour Capacity</span>
+      </label>
+      <input
+        name="capacity"
+        type="number"
+        value={formData.capacity}
+        onChange={handleInputChange}
+        className="input input-bordered w-full"
+        placeholder="Enter ID"
+        />
+    </div>
 
-//     const handleRemoveFeature = (index) => {
-//         setFeaturesList((prevFeaturesList) => {
-//             const newFeaturesList = [...prevFeaturesList];
-//             newFeaturesList.splice(index, 1);
-//             return newFeaturesList;
-//         });
-//     };
+    <div className="form-control">
+     <label className="label">
+        <span className="label-text">Average Rating</span>
+      </label>
+      <input
+        name="ratingsAverage"
+        type="number"
+        value={formData.ratingsAverage}
+        onChange={handleInputChange}
+        className="input input-bordered w-full"
+        placeholder="Enter ID"
+        />
+    </div>
 
-//     // const handleSubmit = (event) => {
-//     //     event.preventDefault();
-//     //     setBusDetails({
-//     //         // id: "",
-//     //         registrationNumber:"",
-//     //         vehicleMake: "",
-//     //         vehicleModel: "",
-//     //         manufacturingYear:0,
-//     //         seating: {
-//     //             capacity: 0,
-//     //             dim: {
-//     //                 row: {
-//     //                     left: 0,
-//     //                     right:0
-//     //                 }
-//     //             }
-//     //         },
-//     //         ac: false,
-//     //         fare: 0,
-//     //         features: featuresList,
-//     //         colour:"",
-//     //     });
-//         setFeaturesList([]);
-//         setNewFeature("");
+    <div className="form-control">
+     <label className="label">
+        <span className="label-text">Tour Price</span>
+      </label>
+      <input
+        name="price"
+        type="number"
+        value={formData.price}
+        onChange={handleInputChange}
+        className="input input-bordered w-full"
+        placeholder="Enter ID"
+        />
+    </div>
 
-//         // console.log(busDetails);
-//         axios.post("http://localhost:4040/bus", busDetails)
-//             .then(response => {
-//                 console.log(response.data);
-//             })
-//             .catch(error => {
-//                 console.error(error);
-//             });
-//     };
+    <div className="form-control">
+     <label className="label">
+        <span className="label-text">Tour Terms</span>
+      </label>
+      <textarea
+        name="terms"
+        value={formData.terms}
+        onChange={handleInputChange}
+        className="input input-bordered w-full"
+        placeholder="Enter ID"
+        />
+    </div>
 
-//     return (
-//         <div className="container mx-auto p-10">
-//             <div className="max-w-md mx-auto bg-white rounded-md overflow-hidden shadow-md p-6">
-//                 <h2 className="text-2xl font-bold mb-4">Add Bus Details</h2>
-//                 <form onSubmit={handleSubmit}>
-//                     {/* ID */}
-//                     {/* <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">ID</span>
-//                         </label>
-//                         <input
-//                             name="id"
-//                             type="text"
-//                             value={busDetails.id}
-//                             onChange={handleInputChange}
-//                             className="input input-bordered w-full"
-//                             placeholder="Enter ID"
-//                         />
-//                     </div> */}
+    <div className="form-control">
+     <label className="label">
+        <span className="label-text">Tour Description</span>
+      </label>
+      <textarea
+        name="description"
+        value={formData.description}
+        onChange={handleInputChange}
+        className="input input-bordered w-full"
+        placeholder="Enter ID"
+        />
+    </div>
 
-//                     {/* Regis Number */}
-//                     <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">Registration number</span>
-//                         </label>
-//                         <input
-//                             name="registrationNumber"
-//                             type="text"
-//                             value={busDetails.registrationNumber}
-//                             onChange={handleInputChange}
-//                             className="input input-bordered w-full"
-//                             placeholder="Enter Registration number"
-//                         />
-//                     </div>
+    <div className="form-control">
+     <label className="label">
+        <span className="label-text">Tour Start Location</span>
+      </label>
+      <textarea
+        type="text"
+        name="startLocation.type"
+        value={formData.startLocation.type}
+        onChange={handleInputChange}
+        className="input input-bordered w-full"
+        placeholder="Enter ID"
+        />
+       <label className="label">
+        Coordinates:
+        <input type="text" name="startLocation.coordinates[0]" value={formData.startLocation.coordinates[0]} onChange={handleInputChange} />
+        <input type="text" name="startLocation.coordinates[1]" value={formData.startLocation.coordinates[1]} onChange={handleInputChange} />
+    </label>
+    <label className="label">
+        Address:
+        <input type="text" name="startLocation.address" value={formData.startLocation.address} onChange={handleInputChange} />
+    </label>
+    <label className="label">
+        Description:
+        <textarea name="startLocation.description" value={formData.startLocation.description} onChange={handleInputChange}></textarea>
+    </label>
+    </div>
 
-//                     {/*Vehicle make*/}
-//                     <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">Vehicle Make</span>
-//                         </label>
-//                         <input
-//                             name="vehicleMake"
-//                             type="text"
-//                             value={busDetails.vehicleMake}
-//                             onChange={handleInputChange}
-//                             className="input input-bordered w-full"
-//                             placeholder="Enter Vehicle Make"
-//                         />
-//                     </div>
+    <div className="form-control">
+    <label className="label">
+        <span className="label-text">Tour Locations:</span>
+      </label>
+    {formData.locations.map((location, index) => (
+        <label key={index} className="label">
+        Type:
+        <input type="text" name={`locations[${index}].type`} value={location.type} onChange={handleInputChange} />
+        Coordinates:
+        <input type="text" name={`locations[${index}].coordinates[0]`} value={location.coordinates[0]} onChange={handleInputChange} />
+        <input type="text" name={`locations[${index}].coordinates[1]`} value={location.coordinates[1]} onChange={handleInputChange} />
+        Address:
+        <input type="text" name={`locations[${index}].address`} value={location.address} onChange={handleInputChange} />
+        Description:
+        <textarea name={`locations[${index}].description`} value={location.description} onChange={handleInputChange}></textarea>
+        </label>
+    ))}
+    <button type="button" onClick={() => setFormData(prevFormData => ({
+        ...prevFormData,
+        locations: [
+        ...prevFormData.locations,
+        {
+            type: 'Point',
+            coordinates: [0, 0],
+            address: '',
+            description: '',
+            stop: prevFormData.locations.length
+        }
+        ]
+    }))}>Add Location</button>
+    </div>
 
-//                     {/* vehicleModel */}
-//                     <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">Vehicle Model</span>
-//                         </label>
-//                         <input
-//                             name="vehicleModel"
-//                             type="text"
-//                             value={busDetails.vehicleModel}
-//                             onChange={handleInputChange}
-//                             className="input input-bordered w-full"
-//                             placeholder="Enter Vehicle Model"
-//                         />
-//                     </div>
+    <div className="form-control">
+     <label className="label">
+        <span className="label-text">Bus Drivers</span>
+      </label>
+      <input
+        name="name"
+        type="text"
+        value={formData.BusDriver}
+        onChange={handleInputChange}
+        className="input input-bordered w-full"
+        placeholder="Enter ID"
+        />
+    </div>
 
-//                     {/* manufacturingYear */}
-//                     <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">Manufacturing Year</span>
-//                         </label>
-//                         <input
-//                             name="manufacturingYear"
-//                             type="number"
-//                             className="input input-bordered w-full"
-//                         />
-//                     </div>
+    <div className="form-control">
+     <label className="label">
+        <span className="label-text">VechileId</span>
+      </label>
+      <input
+        name="name"
+        type="text"
+        value={formData.VehicleId}
+        onChange={handleInputChange}
+        className="input input-bordered w-full"
+        placeholder="Enter ID"
+        />
+    </div>
 
+    <button className="btn btn-primary mt-4" type="submit">
+                        Add TOur
+                    </button>
+    </form>
+    </div>
+    </div>
+  );
+};
 
-//                     {/* Vehicle Class */}
-//                     {/* <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">Vehicle Class</span>
-//                         </label>
-//                         <select
-//                             name="vehicleClass"
-//                             value={busDetails.vehicleClass}
-//                             onChange={handleInputChange}
-//                             className="select select-bordered w-full"
-//                         >
-//                             <option value="" disabled>Select Vehicle Class</option>
-//                             <option value="Sleeper">Sleeper</option>
-//                             <option value="Semi-sleeper">Semi-sleeper</option>
-//                             <option value="Seater">Seater</option>
-//                         </select>
-//                     </div> */}
-
-//                     {/* AC */}
-//                     <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">AC</span>
-//                         </label>
-//                         <div className="flex items-center">
-//                             <input
-//                                 name="ac"
-//                                 type="checkbox"
-//                                 checked={busDetails.ac}
-//                                 onChange={handleInputChange}
-//                                 className="toggle toggle-primary"
-//                             />
-//                         </div>
-//                     </div>
-
-//                     {/* Fare */}
-//                     <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">Fare</span>
-//                         </label>
-//                         <input
-//                             name="fare"
-//                             type="number"
-//                             className="input input-bordered w-full"
-//                         />
-//                     </div>
-
-//                     {/* Capacity */}
-//                     <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">Capacity</span>
-//                         </label>
-//                         <input
-//                             name="capacity"
-//                             type="number"
-//                             className="input input-bordered w-full"
-//                         />
-//                     </div>
-                    
-//                     {/* Seating Left */}
-//                     <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">Seating Left</span>
-//                         </label>
-//                         <input
-//                             name="left"
-//                             type="number"
-//                             className="input input-bordered w-full"
-//                         />
-//                     </div>
-
-//                     {/* Seating Right */}
-//                     <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">Seating Right</span>
-//                         </label>
-//                         <input
-//                             name="right"
-//                             type="number"
-//                             className="input input-bordered w-full"
-//                         />
-//                     </div>
-
-//                     {/* colour */}
-//                     <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">Colour</span>
-//                         </label>
-//                         <input
-//                             name="colour"
-//                             type="text"
-//                             value={busDetails.colour}
-//                             onChange={handleInputChange}
-//                             className="input input-bordered w-full"
-//                             placeholder="Enter colour"
-//                         />
-//                     </div>
-
-//                     {/* Features */}
-//                     <div className="form-control">
-//                         <label className="label">
-//                             <span className="label-text">Features</span>
-//                         </label>
-//                         <div className="flex items-center justify-between">
-//                         <input
-//                             name="newFeature"
-//                             type="text"
-//                             className="input input-bordered w-full"
-//                             value={newFeature}
-//                             onChange={handleFeatureInputChange}
-//                         />
-//                         <button type="button" className="btn btn-primary btn-outline w-12 m-1" onClick={handleAddFeature}>
-//                             <PlusIcon className="w-4 h-4"/> 
-//                         </button>
-//                         </div>
-//                         <ul>
-//                             {featuresList.map((feature, index) => (
-//                                 <li key={feature} className="flex items-center justify-between">
-//                                     <span>{feature}</span>
-//                                     <button type="button" className="btn btn-secondary btn-outline w-12 m-1" onClick={() => handleRemoveFeature(index)}>
-//                                         <XIcon className="w-5 h-5" />
-//                                     </button>
-//                                 </li>
-//                             ))}
-//                         </ul>
-//                     </div>
-
-//                     {/* Submit Button */}
-//                     <button className="btn btn-primary mt-4" type="submit">
-//                         Add Bus
-//                     </button>
-//                 </form>
-//             </div>
-//         </div>
-//     );
-// }
-// export default TourDetailsForm;
+export default TourDetailsForm;
