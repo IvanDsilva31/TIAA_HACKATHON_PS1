@@ -5,10 +5,8 @@ import App from "./App";
 import { AuthProvider } from "./context/AuthProvider";
 import {
   Signup,
-  InitialSignUp,
   Login,
   RequireAuth,
-  LoginDesign,
   BusDetailsForm,
   ViewBus,
   SeatSelector,
@@ -50,10 +48,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <AuthProvider>
         <Routes>
           <Route exact path="/" element={<App />} />
-          <Route exact path="/initial-signup" element={<InitialSignUp />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/login" element={<Login />} />
-          <Route exact path="/login-design" element={<LoginDesign />} />
           <Route element={<RequireAuth allowedRoles={[ROLES.BusOperator]} />}>
             <Route exact path="/addbus" element={<BusDetailsForm />} />
           </Route>
@@ -63,7 +59,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
             <Route exact path="/userboard" element={<UserDashboard />} />
           </Route>
-          <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
+          {/* <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
             <Route
               exact
               path="/seatSelect"
@@ -74,9 +70,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   onSelect={handleSeatSelect}
                 />
               }
-            />
-            {/* <Route exact path="/seatSelect" element={<SeatSelectPage />} /> */}
-          </Route>
+            /> */}
+          <Route exact path="/seatSelect" element={<SeatSelectPage />} />
+          {/* </Route> */}
           <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
             <Route exact path="/searchBar" element={<SearchBar />} />
           </Route>

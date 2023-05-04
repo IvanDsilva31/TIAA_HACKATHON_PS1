@@ -52,20 +52,20 @@ export const passengerLinks = [
   { link: "Home", id: "home" },
   { link: "View Busses", id: "viewBus" },
   { link: "My Tickets", id: "mytickets" },
-]
+];
 
 export const operatorLinks = [
   { link: "Home", id: "home" },
   { link: "My Busses", id: "myBus" },
   { link: "My Routes", id: "myroutes" },
-]
+];
 
 export const hero = {
   title: "The journey is just as important as the destination",
   subtitle: "Come travel with us.",
   text: "Enjoy hassle free inter-city bus services on the click of a button",
-  btn1: "Register",
-  btn2: "Login",
+  btn1: "Get Started",
+  btn2: "View Buses",
   img: dashboard,
   video: video,
 };
@@ -121,7 +121,7 @@ export const pricingapi = {
       planicon: preminumicon,
       title: "Preminum Membership",
       text: "Suitable for enthusiast travelers",
-      plantype: "$60 / Year",
+      plantype: "Rs.600 / Year",
       plancontent: [
         { iconbox: checkbox, text: "Find Popular Destination" },
         { iconbox: checkbox, text: "Priority Booking Schedule" },
@@ -183,12 +183,12 @@ export const singleBusDetails = {
   departureDate: "11 May",
   arrivalTime: 1215,
   arrivalDate: "12 May",
-  stops: ["Ghatkopar","Kurla","Dadar","Bandra"],
+  stops: ["Ghatkopar", "Kurla", "Dadar", "Bandra"],
   vehicleClass: "sleeper",
   ac: false,
   fare: 4000,
   capacity: 35,
-  availablity:12,
-  rating:3.4,
-  features: []
-}
+  availablity: 12,
+  rating: 3.4,
+  features: [],
+};

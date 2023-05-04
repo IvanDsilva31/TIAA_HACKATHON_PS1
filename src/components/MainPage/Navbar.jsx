@@ -56,20 +56,20 @@ const Navbar = ({ navlinks }) => {
           <ul className="flex items-center lg:hidden">
             <li className="p-2">
               <Link
-                to="/initial-signup"
+                to="/login"
                 className="btn btn-primary rounded-full px-7 text-base"
               >
                 Register
               </Link>
             </li>
-            <li className="p-2">
+            {/* <li className="p-2">
               <Link
                 to="/login"
                 className="btn btn-outline rounded-full px-7 text-base"
               >
                 Login
               </Link>
-            </li>
+            </li> */}
           </ul>
           <ul className="hidden lg:flex items-center">
             <li>

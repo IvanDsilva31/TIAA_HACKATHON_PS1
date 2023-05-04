@@ -17,10 +17,7 @@ const Hero = ({ hero: { title, subtitle, btn1, btn2, text, img, video } }) => {
               {text}
             </p>
             <div className="flex items-center justify-center gap-11 sm:gap-3 sm:flex-col sm:w-full">
-              <Link
-                to="/initial-signup"
-                className="btn btn-primary rounded-full px-8"
-              >
+              <Link to="/login" className="btn btn-primary rounded-full px-8">
                 {btn1}
               </Link>
               <Link
